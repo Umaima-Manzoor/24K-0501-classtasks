@@ -7,6 +7,7 @@ class Node {
         string data;
         Node* next;
 
+
         Node(string d): data(d), next(NULL){}
 
 };
