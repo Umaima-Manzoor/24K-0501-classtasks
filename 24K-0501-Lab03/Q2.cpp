@@ -22,7 +22,6 @@ class Catalog {
             Node *n = new Node(val);
             if (head == NULL) {
                 head = n;
-                n->next = NULL;
                 tail = n;
                 return;
             }
@@ -33,7 +32,6 @@ class Catalog {
                     temp = temp->next;
                 }
                 temp->next = n;
-                n->next = NULL;
                 tail = n;
             }
         }
