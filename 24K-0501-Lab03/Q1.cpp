@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-
 class Node {
     public:
         string data;
@@ -34,12 +33,13 @@ class Library {
                 return;
             }
             Node* temp = head;
-            while (temp->next != tail) {
+            while (temp->next != NULL) {
                 temp = temp->next;
 
             }
             temp->next = n;
-            n->next = tail;
+            tail = n;
+            n->next = NULL;
             cout << val << " added at end" << endl;
         }
 
