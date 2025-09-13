@@ -33,16 +33,16 @@ class Railway {
     }
 
     void deleteFromFront() {
-        int val = tail->data;
+        int val = head->data;
         if (head == tail) {
             delete head;
             head = NULL;
             tail = NULL;
         }
         else {
-            tail = tail->prev;
-            delete tail->next;
-            tail->next = NULL;
+            head = head->next;
+            delete head->prev;
+            head->prev = NULL;
         }
         cout << val << " deleted from front" << endl;
         
@@ -86,7 +86,7 @@ int main () {
     cout << endl;
 
     r.searchByNumber(102);
-    r.searchByNumber(105);
+    
 
     return 0;
 }
