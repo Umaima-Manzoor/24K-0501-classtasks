@@ -22,18 +22,21 @@ class LinkedList {
             Node* n = new Node(val);
             if (head == NULL) {
                 head = n;
+                tail = n;
                 cout << val << " added at end" << endl;
                 return;
             }
             Node* temp = head;
-            while (temp->next != tail) {
+            while (temp->next != NULL) {
                 temp = temp->next;
 
             }
             temp->next = n;
-            n->next = tail;
+            tail = n;
             cout << val << " added at end" << endl;
         }
+
+        
 
         void displayInfo() {
             Node *temp = head;
@@ -82,6 +85,7 @@ class LinkedList {
                 temp = temp->next;
             }
             temp->next = other.head;
+            tail = other.tail;
         }
 
         void findMiddleElement() {
@@ -123,52 +127,9 @@ class LinkedList {
 
         void mergeSorted(LinkedList &other) {
             
+            concatenate(other);
             sort();
-            other.sort();
-            
-            Node* p1 = head;
-            Node* p2 = other.head;
-
-            LinkedList merged;
-            
-            if (head == NULL) {
-                head = other.head;
-                return;
-            }
-            if (other.head == NULL) {
-                return;
-            }
-
-            
-
-
-
-            while (p1 != NULL && p2 != NULL) {
-                if (p1->data < p2->data) {
-                    merged.addAtEnd(p1->data);
-                    p1 = p1->next;
-                }
-                else {
-                    merged.addAtEnd(p2->data);
-                    p2 = p2->next;
-                }
-            }
-
-            while (p1 != NULL) {
-                merged.addAtEnd(p1->data);
-                p1 = p1->next;
-            }
-
-            while (p2 != NULL) {
-                merged.addAtEnd(p2->data);
-                p2 = p2->next;
-            }
-
-            head = merged.head;
-            tail = merged.tail;
-
-            merged.head = NULL;
-            merged.tail = NULL;
+            removeDuplicates();
 
         }
 
@@ -198,10 +159,7 @@ int main() {
     l2.displayInfo();
     cout << endl<<endl;
 
-    cout << "Concatenated Linked List (without sorting):"<< endl;
-    l1.concatenate(l2);
-    l1.displayInfo();
-    cout << endl<<endl;
+   
 
     cout << "Sorted Linked List 1:"<< endl;
     l1.sort();
