@@ -29,6 +29,9 @@ class Library {
             Node* n = new Node(val);
             if (head == NULL) {
                 head = n;
+                n->next = NULL;
+                tail = n;
+                tail->next = NULL;
                 cout << val << " added at end" << endl;
                 return;
             }
