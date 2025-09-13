@@ -27,11 +27,8 @@ class Catalog {
             }
 
             else {
-                Node *temp = head;
-                while (temp->next!=NULL) {
-                    temp = temp->next;
-                }
-                temp->next = n;
+                
+                tail->next = n;
                 tail = n;
             }
         }
