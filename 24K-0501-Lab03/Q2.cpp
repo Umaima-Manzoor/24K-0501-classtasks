@@ -7,7 +7,6 @@ class Node {
         string data;
         Node* next;
 
-
         Node(string d): data(d), next(NULL){}
 
 };
@@ -23,6 +22,8 @@ class Catalog {
             Node *n = new Node(val);
             if (head == NULL) {
                 head = n;
+                n->next = NULL;
+                tail = n;
                 return;
             }
 
@@ -32,7 +33,8 @@ class Catalog {
                     temp = temp->next;
                 }
                 temp->next = n;
-                n->next = tail;
+                n->next = NULL;
+                tail = n;
             }
         }
 
