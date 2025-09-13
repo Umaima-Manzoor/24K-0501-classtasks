@@ -31,7 +31,6 @@ class Library {
                 head = n;
                 n->next = NULL;
                 tail = n;
-                tail->next = NULL;
                 cout << val << " added at end" << endl;
                 return;
             }
@@ -41,8 +40,8 @@ class Library {
 
             }
             temp->next = n;
-            tail = n;
             n->next = NULL;
+            tail = n;
             cout << val << " added at end" << endl;
         }
 
