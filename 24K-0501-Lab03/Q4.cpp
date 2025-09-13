@@ -169,7 +169,7 @@ class LinkedList {
 
             merged.head = NULL;
             merged.tail = NULL;
-            
+
         }
 
        
@@ -196,12 +196,17 @@ int main() {
 
     cout << "Linked List 2:"<< endl;
     l2.displayInfo();
-    cout << endl;
+    cout << endl<<endl;
+
+    cout << "Concatenated Linked List (without sorting):"<< endl;
+    l1.concatenate(l2);
+    l1.displayInfo();
+    cout << endl<<endl;
 
     cout << "Sorted Linked List 1:"<< endl;
     l1.sort();
     l1.displayInfo();
-    cout << endl;   
+    cout << endl<<endl;   
 
     cout << "Middle element of Linked List 1:"<< endl;
     l1.findMiddleElement();
@@ -210,7 +215,7 @@ int main() {
     cout << "Sorted Linked List 2:"<< endl;
     l2.sort();
     l2.displayInfo();
-    cout << endl;
+    cout << endl<<endl;
 
     cout << "Merging both sorted linked lists:"<< endl;
     l1.mergeSorted(l2);
