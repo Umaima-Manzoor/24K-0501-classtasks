@@ -29,6 +29,7 @@ class Library {
             Node* n = new Node(val);
             if (head == NULL) {
                 head = n;
+                cout << val << " added at end" << endl;
                 return;
             }
             Node* temp = head;
@@ -83,7 +84,7 @@ int main() {
 
     Library books;
 
-    books.addAtFront("Data Structures");
+    books.addAtEnd("Data Structures");
     books.addAtEnd("Operating Systems");
     books.addAtEnd("Computer Networks");
     books.addAtEnd("Database Systems");
