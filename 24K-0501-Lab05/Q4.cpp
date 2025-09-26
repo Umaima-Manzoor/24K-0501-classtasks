@@ -20,7 +20,7 @@ int solveNQueens(int board[], int n, int row = 0) {
         solutionCount++;
         
         if (printed == false) {
-            cout << "One of the possible solutions is:\n";
+            cout << "One of the possible solutions is:"<< endl;
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
                     if (board[i] == j) cout << " Q ";
