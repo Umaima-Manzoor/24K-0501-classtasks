@@ -1,3 +1,5 @@
+//Shell Sort is more efficient than Insertion Sort because it sorts elements at specific gaps, allowing distant elements to move closer to their correct positions early. This reduces the total number of comparisons and shifts, making the algorithm faster, especially for larger or unsorted datasets.
+
 #include <iostream>
 using namespace std;
 
