@@ -61,12 +61,8 @@ Node *leftRotate(Node *x)
     y->left = x;
     x->right = T2;
 
-    x->height = max(height(x->left),
-                    height(x->right)) +
-                1;
-    y->height = max(height(y->left),
-                    height(y->right)) +
-                1;
+    x->height = max(height(x->left),height(x->right)) + 1;
+    y->height = max(height(y->left),height(y->right)) + 1;
 
     return y;
 }
@@ -213,26 +209,24 @@ int main()
 {
     Node *root = NULL;
 
-    root = insert(root, 9);
-    root = insert(root, 5);
     root = insert(root, 10);
-    root = insert(root, 0);
-    root = insert(root, 6);
-    root = insert(root, 11);
-    root = insert(root, -1);
-    root = insert(root, 1);
-    root = insert(root, 2);
+    root = insert(root, 20);
+    root = insert(root, 30);
+    root = insert(root, 40);
+    root = insert(root, 50);
+
 
     cout << "Preorder traversal of the "
-            "constructed AVL tree is \n";
+            "constructed AVL tree is:"<<endl;
     preOrder(root);
 
-    root = deleteNode(root, 10);
+    root = insert(root, 15);
 
 
     cout << "\nPreorder traversal after"
-         << " deletion of 10 \n";
+         << " insertion of 15:" <<endl;
     preOrder(root);
+    cout << "\nHeight of the tree: "<< height(root)-1<<endl;
 
     return 0;
 }
